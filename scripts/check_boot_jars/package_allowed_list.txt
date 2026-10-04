@@ -231,6 +231,7 @@ com\.nothing\..*
 
 # OPLUS adds
 com\.oplus\..*
+com\.color\.inner\..*
 
 # QC adds
 com.qualcomm.qti
