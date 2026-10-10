@@ -239,6 +239,9 @@ com\.oneplus\..*
 com\.thundersoft\..*
 vendor\.oneplus\..*
 
+# LMODroid adds
+com\.libremobileos.*
+
 # QC adds
 com.qualcomm.qti
 com.quicinc.tcmiface
