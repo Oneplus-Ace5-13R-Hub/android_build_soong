@@ -151,10 +151,7 @@ func (p *buildPropModule) GenerateAndroidBuildActions(ctx ModuleContext) {
 		cmd.FlagWithInput("--build-thumbprint-file=", config.BuildThumbprintFile(ctx))
 	}
 	cmd.FlagWithArg("--build-username=", config.Getenv("BUILD_USERNAME"))
-	// shouldn't depend on BUILD_DATETIME_FILE to prevent from rebuilding on every incremental
-	// build.
-	cmd.FlagWithArg("--date-file=", ctx.Config().Getenv("BUILD_DATETIME_FILE"))
-	cmd.OrderOnly(config.BuildDateFile(ctx))
+	cmd.FlagWithInput("--date-file=", config.BuildDateFile(ctx))
 	cmd.FlagWithInput("--platform-preview-sdk-fingerprint-file=", ApiFingerprintPath(ctx))
 	cmd.FlagWithInput("--product-config=", PathForModuleSrc(ctx, proptools.String(p.properties.Product_config)))
 	cmd.FlagWithArg("--partition=", partition)
